@@ -33,7 +33,7 @@ const FeaturesSection = () => {
                 key={feature.id}
                 className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100"
               >
-                <div className="mobile-feature-icon w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 rounded-xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="feature-icon-container w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 rounded-xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
                 
@@ -59,20 +59,20 @@ const FeaturesSection = () => {
               Professional Editing Suite
             </h3>
             <ul className="space-y-2 sm:space-y-3 text-gray-600 text-sm sm:text-base">
-              <li className="mobile-icon-text">
-                <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
+              <li className="flex items-center gap-3">
+                <div className="icon-container w-2 h-2 rounded-full bg-blue-600 flex-shrink-0"></div>
                 <span>Blur sensitive information with precision</span>
               </li>
-              <li className="mobile-icon-text">
-                <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
+              <li className="flex items-center gap-3">
+                <div className="icon-container w-2 h-2 rounded-full bg-blue-600 flex-shrink-0"></div>
                 <span>Add arrows, text, and callouts</span>
               </li>
-              <li className="mobile-icon-text">
-                <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
+              <li className="flex items-center gap-3">
+                <div className="icon-container w-2 h-2 rounded-full bg-blue-600 flex-shrink-0"></div>
                 <span>Crop and resize with pixel precision</span>
               </li>
-              <li className="mobile-icon-text">
-                <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
+              <li className="flex items-center gap-3">
+                <div className="icon-container w-2 h-2 rounded-full bg-blue-600 flex-shrink-0"></div>
                 <span>Multiple export formats and quality settings</span>
               </li>
             </ul>
@@ -83,20 +83,20 @@ const FeaturesSection = () => {
               Enterprise-Ready Security
             </h3>
             <ul className="space-y-2 sm:space-y-3 text-gray-600 text-sm sm:text-base">
-              <li className="mobile-icon-text">
-                <div className="w-2 h-2 bg-green-600 rounded-full flex-shrink-0"></div>
+              <li className="flex items-center gap-3">
+                <div className="icon-container w-2 h-2 rounded-full bg-green-600 flex-shrink-0"></div>
                 <span>No network connections required</span>
               </li>
-              <li className="mobile-icon-text">
-                <div className="w-2 h-2 bg-green-600 rounded-full flex-shrink-0"></div>
+              <li className="flex items-center gap-3">
+                <div className="icon-container w-2 h-2 rounded-full bg-green-600 flex-shrink-0"></div>
                 <span>Local storage with encryption options</span>
               </li>
-              <li className="mobile-icon-text">
-                <div className="w-2 h-2 bg-green-600 rounded-full flex-shrink-0"></div>
+              <li className="flex items-center gap-3">
+                <div className="icon-container w-2 h-2 rounded-full bg-green-600 flex-shrink-0"></div>
                 <span>Compliance with data protection regulations</span>
               </li>
-              <li className="mobile-icon-text">
-                <div className="w-2 h-2 bg-green-600 rounded-full flex-shrink-0"></div>
+              <li className="flex items-center gap-3">
+                <div className="icon-container w-2 h-2 rounded-full bg-green-600 flex-shrink-0"></div>
                 <span>Audit trail and logging capabilities</span>
               </li>
             </ul>

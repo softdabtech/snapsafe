@@ -38,11 +38,10 @@ const HeroSection = ({ onCorporateClick }) => {
             >
               <div className="download-button-content">
                 <Monitor className="download-icon w-5 h-5" />
-                <span className="button-text" data-text="Download for Windows">
+                <span className="button-text">
                   Download for Windows
                 </span>
               </div>
-              <div className="download-badge">NEW</div>
             </button>
             
             {/* macOS Download Button */}
@@ -52,11 +51,10 @@ const HeroSection = ({ onCorporateClick }) => {
             >
               <div className="download-button-content">
                 <Apple className="download-icon w-5 h-5" />
-                <span className="button-text" data-text="Download for macOS">
+                <span className="button-text">
                   Download for macOS
                 </span>
               </div>
-              <div className="download-badge">NEW</div>
             </button>
             
             {/* Corporate License Button */}
@@ -66,27 +64,26 @@ const HeroSection = ({ onCorporateClick }) => {
             >
               <div className="download-button-content">
                 <Building className="download-icon w-5 h-5" />
-                <span className="button-text" data-text="Corporate License">
+                <span className="button-text">
                   Corporate License
                 </span>
               </div>
-              <div className="download-badge">PRO</div>
             </button>
           </div>
 
           {/* Enhanced Trust Indicators */}
           <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6 sm:gap-8 text-sm text-gray-500 px-4">
-            <div className="mobile-icon-text bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+            <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
               <Shield className="w-4 h-4 text-blue-600 flex-shrink-0" />
               <span className="font-medium">100% Offline</span>
             </div>
-            <div className="mobile-icon-text bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+            <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
               <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
               </div>
               <span className="font-medium">Zero Data Collection</span>
             </div>
-            <div className="mobile-icon-text bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+            <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
               <div className="w-4 h-4 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                 <div className="w-1 h-1 bg-white rounded-full"></div>
               </div>

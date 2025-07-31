@@ -34,21 +34,30 @@ const HeroSection = ({ onCorporateClick }) => {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4">
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
+              className="download-button download-button-primary text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto relative overflow-hidden"
               onClick={() => window.open('/download/windows', '_blank')}
             >
-              <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-              Download for Windows
+              <div className="download-indicator mobile-icon-center">
+                <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
+                <span>Download for Windows</span>
+              </div>
+              <div className="absolute top-1 right-2 text-xs opacity-75">
+                <span className="bg-white/20 px-2 py-1 rounded-full">Official</span>
+              </div>
             </Button>
             
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+              className="download-button download-button-secondary text-blue-600 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto relative overflow-hidden"
               onClick={() => window.open('/download/macos', '_blank')}
             >
-              <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-              Download for macOS
+              <div className="download-indicator mobile-icon-center">
+                <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
+                <span>Download for macOS</span>
+              </div>
+              <div className="absolute top-1 right-2 text-xs opacity-75">
+                <span className="bg-blue-600/20 text-blue-800 px-2 py-1 rounded-full">Official</span>
+              </div>
             </Button>
             
             <Button 
@@ -57,25 +66,27 @@ const HeroSection = ({ onCorporateClick }) => {
               className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
               onClick={onCorporateClick}
             >
-              <Building className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-              Corporate License
+              <div className="mobile-icon-center">
+                <Building className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
+                <span>Corporate License</span>
+              </div>
             </Button>
           </div>
 
           {/* Trust Indicators */}
           <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-8 text-sm text-gray-500 px-4">
-            <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-blue-600" />
+            <div className="mobile-icon-text">
+              <Shield className="w-4 h-4 text-blue-600 flex-shrink-0" />
               <span>100% Offline</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+            <div className="mobile-icon-text">
+              <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
               </div>
               <span>Zero Data Collection</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-blue-600 rounded-full flex items-center justify-center">
+            <div className="mobile-icon-text">
+              <div className="w-4 h-4 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                 <div className="w-1 h-1 bg-white rounded-full"></div>
               </div>
               <span>Cross-Platform</span>

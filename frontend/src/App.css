@@ -15,6 +15,56 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  position: relative;
+}
+
+/* Subtle tech-themed background pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.03;
+  background-image: 
+    radial-gradient(circle at 25% 25%, #007BFF 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, #007BFF 1px, transparent 1px),
+    linear-gradient(45deg, transparent 24%, rgba(0, 123, 255, 0.05) 25%, rgba(0, 123, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 123, 255, 0.05) 75%, rgba(0, 123, 255, 0.05) 76%, transparent 77%);
+  background-size: 50px 50px, 30px 30px, 20px 20px;
+  background-position: 0 0, 15px 15px, 0 0;
+  animation: float 20s ease-in-out infinite;
+}
+
+/* Floating animation for background */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-10px) translateX(5px); }
+  66% { transform: translateY(5px) translateX(-5px); }
+}
+
+/* Security-themed background elements */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.02;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L30 10L20 20L10 10Z' fill='%23007BFF' fill-opacity='0.1'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='2' fill='%23007BFF' fill-opacity='0.1'/%3E%3C/svg%3E");
+  background-size: 40px 40px, 60px 60px;
+  background-position: 0 0, 30px 30px;
+  animation: slide 30s linear infinite;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(40px); }
 }
 
 /* Remove default App centering that disrupts natural reading flow */
@@ -40,9 +90,78 @@ body {
   background: #94a3b8;
 }
 
+/* Enhanced download button styles */
+.download-button {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.download-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.download-button:hover::before {
+  left: 100%;
+}
+
+.download-button-primary {
+  background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  border: none;
+}
+
+.download-button-primary:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.download-button-secondary {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 2px solid #007BFF;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+}
+
+.download-button-secondary:hover {
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 123, 255, 0.05) 100%);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Download indicator animation */
+.download-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-indicator::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 50%;
+  margin-left: 8px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
 /* Enhanced button hover effects */
 button {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button:hover {
@@ -51,6 +170,29 @@ button:hover {
 
 button:active {
   transform: translateY(0);
+}
+
+/* Mobile icon alignment fixes */
+@media (max-width: 640px) {
+  .mobile-icon-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobile-feature-icon {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobile-icon-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+  }
 }
 
 /* Custom selection styling */
@@ -232,6 +374,11 @@ a:hover {
   
   html {
     scroll-behavior: auto;
+  }
+  
+  body::before,
+  body::after {
+    animation: none;
   }
 }
 

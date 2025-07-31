@@ -74,18 +74,18 @@ const ContactModal = ({ isOpen, onClose }) => {
   if (isSubmitted) {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-md">
-          <div className="text-center py-8">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Check className="w-8 h-8 text-green-600" />
+        <DialogContent className="sm:max-w-md mx-4">
+          <div className="text-center py-6 sm:py-8">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Check className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
               Thank You!
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
               Your corporate licensing request has been submitted successfully.
             </p>
-            <p className="text-sm text-gray-500">
+            <p className="text-xs sm:text-sm text-gray-500">
               We'll get back to you within 24 hours with a custom quote.
             </p>
           </div>
@@ -96,22 +96,22 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto mx-4">
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-3 text-2xl">
-            <Building className="w-6 h-6 text-blue-600" />
+          <DialogTitle className="flex items-center gap-2 sm:gap-3 text-xl sm:text-2xl">
+            <Building className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
             Corporate License Request
           </DialogTitle>
-          <DialogDescription className="text-gray-600">
+          <DialogDescription className="text-gray-600 text-sm sm:text-base">
             Tell us about your organization's needs and we'll provide a custom quote.
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-6 mt-6">
-          <div className="grid sm:grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 mt-4 sm:mt-6">
+          <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="flex items-center gap-2">
-                <User className="w-4 h-4" />
+              <Label htmlFor="name" className="flex items-center gap-2 text-sm sm:text-base">
+                <User className="w-3 h-3 sm:w-4 sm:h-4" />
                 Full Name *
               </Label>
               <Input
@@ -122,13 +122,13 @@ const ContactModal = ({ isOpen, onClose }) => {
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="John Doe"
-                className="transition-all duration-200 focus:ring-2 focus:ring-blue-500"
+                className="transition-all duration-200 focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="company" className="flex items-center gap-2">
-                <Building className="w-4 h-4" />
+              <Label htmlFor="company" className="flex items-center gap-2 text-sm sm:text-base">
+                <Building className="w-3 h-3 sm:w-4 sm:h-4" />
                 Company Name *
               </Label>
               <Input
@@ -139,14 +139,14 @@ const ContactModal = ({ isOpen, onClose }) => {
                 value={formData.company}
                 onChange={handleInputChange}
                 placeholder="Acme Corporation"
-                className="transition-all duration-200 focus:ring-2 focus:ring-blue-500"
+                className="transition-all duration-200 focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email" className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
+            <Label htmlFor="email" className="flex items-center gap-2 text-sm sm:text-base">
+              <Mail className="w-3 h-3 sm:w-4 sm:h-4" />
               Email Address *
             </Label>
             <Input
@@ -157,17 +157,17 @@ const ContactModal = ({ isOpen, onClose }) => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="john@company.com"
-              className="transition-all duration-200 focus:ring-2 focus:ring-blue-500"
+              className="transition-all duration-200 focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="licenses" className="flex items-center gap-2">
-              <Users className="w-4 h-4" />
+            <Label htmlFor="licenses" className="flex items-center gap-2 text-sm sm:text-base">
+              <Users className="w-3 h-3 sm:w-4 sm:h-4" />
               Number of Licenses Needed *
             </Label>
             <Select onValueChange={handleSelectChange} required>
-              <SelectTrigger className="transition-all duration-200 focus:ring-2 focus:ring-blue-500">
+              <SelectTrigger className="transition-all duration-200 focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                 <SelectValue placeholder="Select license count" />
               </SelectTrigger>
               <SelectContent>
@@ -182,8 +182,8 @@ const ContactModal = ({ isOpen, onClose }) => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message" className="flex items-center gap-2">
-              <MessageSquare className="w-4 h-4" />
+            <Label htmlFor="message" className="flex items-center gap-2 text-sm sm:text-base">
+              <MessageSquare className="w-3 h-3 sm:w-4 sm:h-4" />
               Additional Details
             </Label>
             <Textarea
@@ -192,14 +192,14 @@ const ContactModal = ({ isOpen, onClose }) => {
               value={formData.message}
               onChange={handleInputChange}
               placeholder="Tell us about your specific requirements, deployment timeline, or any questions you have..."
-              rows={4}
-              className="transition-all duration-200 focus:ring-2 focus:ring-blue-500"
+              rows={3}
+              className="transition-all duration-200 focus:ring-2 focus:ring-blue-500 text-sm sm:text-base resize-none"
             />
           </div>
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="font-semibold text-blue-900 mb-2">What happens next?</h4>
-            <ul className="text-sm text-blue-800 space-y-1">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4">
+            <h4 className="font-semibold text-blue-900 mb-2 text-sm sm:text-base">What happens next?</h4>
+            <ul className="text-xs sm:text-sm text-blue-800 space-y-1">
               <li>• We'll review your requirements within 24 hours</li>
               <li>• Our team will prepare a custom quote with volume discounts</li>
               <li>• We'll schedule a demo to show enterprise features</li>
@@ -207,25 +207,25 @@ const ContactModal = ({ isOpen, onClose }) => {
             </ul>
           </div>
 
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-2 sm:gap-3 pt-2 sm:pt-4">
             <Button
               type="button"
               variant="outline"
               onClick={onClose}
-              className="flex-1"
+              className="flex-1 text-sm sm:text-base"
               disabled={isSubmitting}
             >
               Cancel
             </Button>
             <Button
               type="submit"
-              className="flex-1 bg-blue-600 hover:bg-blue-700"
+              className="flex-1 bg-blue-600 hover:bg-blue-700 text-sm sm:text-base"
               disabled={!isFormValid || isSubmitting}
             >
               {isSubmitting ? (
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  Submitting...
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <span className="text-xs sm:text-sm">Submitting...</span>
                 </div>
               ) : (
                 'Submit Request'

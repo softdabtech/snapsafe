@@ -95,6 +95,8 @@ body::after {
   position: relative;
   overflow: hidden;
   transform: translateZ(0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .download-button::before {
@@ -104,37 +106,190 @@ body::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
 }
 
 .download-button:hover::before {
   left: 100%;
 }
 
-.download-button-primary {
-  background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-  border: none;
+.download-button-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.download-button-primary:hover {
-  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+/* Windows Button - Primary Blue */
+.download-button-windows {
+  background: linear-gradient(135deg, #0078d4 0%, #106ebe 50%, #005a9e 100%);
+  border: 2px solid #0078d4;
+  box-shadow: 
+    0 8px 32px rgba(0, 120, 212, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.download-button-windows:hover {
+  background: linear-gradient(135deg, #106ebe 0%, #005a9e 50%, #004578 100%);
+  box-shadow: 
+    0 12px 40px rgba(0, 120, 212, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  border-color: #106ebe;
+}
+
+.download-button-windows::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* macOS Button - Elegant Silver */
+.download-button-macos {
+  background: linear-gradient(135deg, #f5f5f7 0%, #e5e5e7 50%, #d1d1d6 100%);
+  border: 2px solid #d1d1d6;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  color: #1d1d1f;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.download-button-macos:hover {
+  background: linear-gradient(135deg, #e5e5e7 0%, #d1d1d6 50%, #c7c7cc 100%);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-3px) scale(1.02);
+  border-color: #c7c7cc;
+}
+
+.download-button-macos::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  background: rgba(29, 29, 31, 0.4);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite 0.5s;
+}
+
+/* Corporate Button - Professional Dark */
+.download-button-corporate {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%);
+  border: 2px solid #404040;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.download-button-corporate:hover {
+  background: linear-gradient(135deg, #2d2d2d 0%, #404040 50%, #525252 100%);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px) scale(1.02);
+  border-color: #525252;
+}
+
+.download-button-corporate::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite 1s;
+}
+
+/* Button Icons Animation */
+.download-icon {
+  transition: all 0.3s ease;
+}
+
+.download-button:hover .download-icon {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Download indicator badges */
+.download-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+  animation: badge-bounce 2s ease-in-out infinite;
+  z-index: 3;
+}
+
+@keyframes badge-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Button text effects */
+.button-text {
+  position: relative;
+  z-index: 2;
+}
+
+.button-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  color: rgba(255, 255, 255, 0.8);
   transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
-.download-button-secondary {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-  border: 2px solid #007BFF;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+.download-button:hover .button-text::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.download-button-secondary:hover {
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 123, 255, 0.05) 100%);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.2);
-  transform: translateY(-2px);
+/* Responsive button styles */
+@media (max-width: 640px) {
+  .download-button {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+  
+  .download-badge {
+    top: -6px;
+    right: -6px;
+    font-size: 9px;
+    padding: 1px 4px;
+  }
 }
 
 /* Download indicator animation */

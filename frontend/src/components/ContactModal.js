@@ -11,7 +11,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { Building, Mail, User, MessageSquare, Check } from 'lucide-react';
+import { Building, Mail, User, MessageSquare, Check, Users } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
 const ContactModal = ({ isOpen, onClose }) => {

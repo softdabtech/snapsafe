@@ -3,7 +3,6 @@ import { Button } from './ui/button';
 import { Download, Shield, Building } from 'lucide-react';
 
 import React from 'react';
-import { Button } from './ui/button';
 import { Download, Shield, Building, Monitor, Apple } from 'lucide-react';
 
 const HeroSection = ({ onCorporateClick }) => {

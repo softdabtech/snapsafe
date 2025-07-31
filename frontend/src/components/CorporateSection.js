@@ -37,7 +37,7 @@ const CorporateSection = ({ onContactClick }) => {
                   key={index}
                   className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white/10 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <div className="icon-container w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-lg flex-shrink-0">
                     <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </div>
                   <span className="font-medium text-gray-200 text-sm sm:text-base">
@@ -65,8 +65,10 @@ const CorporateSection = ({ onContactClick }) => {
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 sm:py-4 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
                   onClick={onContactClick}
                 >
-                  <Building className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-                  Contact Us for Corporate Licensing
+                  <div className="flex items-center justify-center gap-2 sm:gap-3">
+                    <Building className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                    <span>Contact Us for Corporate Licensing</span>
+                  </div>
                 </Button>
                 
                 <div className="text-xs sm:text-sm text-gray-400 space-y-1">
@@ -80,15 +82,15 @@ const CorporateSection = ({ onContactClick }) => {
             {/* Trust Indicators */}
             <div className="mt-6 sm:mt-8 flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm text-gray-400">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="icon-container w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></div>
                 <span>SOC 2 Compliant</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <div className="icon-container w-2 h-2 rounded-full bg-blue-500 flex-shrink-0"></div>
                 <span>GDPR Ready</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                <div className="icon-container w-2 h-2 rounded-full bg-purple-500 flex-shrink-0"></div>
                 <span>ISO 27001</span>
               </div>
             </div>

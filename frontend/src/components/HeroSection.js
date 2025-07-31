@@ -2,6 +2,10 @@ import React from 'react';
 import { Button } from './ui/button';
 import { Download, Shield, Building } from 'lucide-react';
 
+import React from 'react';
+import { Button } from './ui/button';
+import { Download, Shield, Building, Monitor, Apple } from 'lucide-react';
+
 const HeroSection = ({ onCorporateClick }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-16">
@@ -31,65 +35,81 @@ const HeroSection = ({ onCorporateClick }) => {
           </p>
 
           {/* Call-to-Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4">
-            <Button 
-              size="lg" 
-              className="download-button download-button-primary text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto relative overflow-hidden"
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 px-4">
+            {/* Windows Download Button */}
+            <button
+              className="download-button download-button-windows relative px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 w-full sm:w-auto shadow-lg"
               onClick={() => window.open('/download/windows', '_blank')}
             >
-              <div className="download-indicator mobile-icon-center">
-                <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
-                <span>Download for Windows</span>
+              <div className="download-button-content">
+                <Monitor className="download-icon w-5 h-5" />
+                <span className="button-text" data-text="Download for Windows">
+                  Download for Windows
+                </span>
               </div>
-              <div className="absolute top-1 right-2 text-xs opacity-75">
-                <span className="bg-white/20 px-2 py-1 rounded-full">Official</span>
-              </div>
-            </Button>
+              <div className="download-badge">NEW</div>
+            </button>
             
-            <Button 
-              size="lg" 
-              className="download-button download-button-secondary text-blue-600 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto relative overflow-hidden"
+            {/* macOS Download Button */}
+            <button
+              className="download-button download-button-macos relative px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 w-full sm:w-auto shadow-lg"
               onClick={() => window.open('/download/macos', '_blank')}
             >
-              <div className="download-indicator mobile-icon-center">
-                <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
-                <span>Download for macOS</span>
+              <div className="download-button-content">
+                <Apple className="download-icon w-5 h-5" />
+                <span className="button-text" data-text="Download for macOS">
+                  Download for macOS
+                </span>
               </div>
-              <div className="absolute top-1 right-2 text-xs opacity-75">
-                <span className="bg-blue-600/20 text-blue-800 px-2 py-1 rounded-full">Official</span>
-              </div>
-            </Button>
+              <div className="download-badge">NEW</div>
+            </button>
             
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+            {/* Corporate License Button */}
+            <button
+              className="download-button download-button-corporate relative px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 w-full sm:w-auto shadow-lg"
               onClick={onCorporateClick}
             >
-              <div className="mobile-icon-center">
-                <Building className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
-                <span>Corporate License</span>
+              <div className="download-button-content">
+                <Building className="download-icon w-5 h-5" />
+                <span className="button-text" data-text="Corporate License">
+                  Corporate License
+                </span>
               </div>
-            </Button>
+              <div className="download-badge">PRO</div>
+            </button>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-8 text-sm text-gray-500 px-4">
-            <div className="mobile-icon-text">
+          {/* Enhanced Trust Indicators */}
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6 sm:gap-8 text-sm text-gray-500 px-4">
+            <div className="mobile-icon-text bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
               <Shield className="w-4 h-4 text-blue-600 flex-shrink-0" />
-              <span>100% Offline</span>
+              <span className="font-medium">100% Offline</span>
             </div>
-            <div className="mobile-icon-text">
+            <div className="mobile-icon-text bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
               <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
               </div>
-              <span>Zero Data Collection</span>
+              <span className="font-medium">Zero Data Collection</span>
             </div>
-            <div className="mobile-icon-text">
+            <div className="mobile-icon-text bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
               <div className="w-4 h-4 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                 <div className="w-1 h-1 bg-white rounded-full"></div>
               </div>
-              <span>Cross-Platform</span>
+              <span className="font-medium">Cross-Platform</span>
+            </div>
+          </div>
+
+          {/* Download Stats */}
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-500 mb-2">
+              Trusted by over <span className="font-bold text-blue-600">50,000+</span> professionals worldwide
+            </p>
+            <div className="flex justify-center items-center gap-4 text-xs text-gray-400">
+              <span>★★★★★ 4.9/5 Rating</span>
+              <span>•</span>
+              <span>Free Download</span>
+              <span>•</span>
+              <span>No Registration Required</span>
             </div>
           </div>
         </div>

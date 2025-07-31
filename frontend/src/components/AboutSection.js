@@ -39,7 +39,7 @@ const AboutSection = () => {
               editing tools for your screenshots.
             </p>
             <div className="inline-flex items-center gap-2 sm:gap-3 bg-blue-50 px-4 sm:px-6 py-2 sm:py-3 rounded-full">
-              <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+              <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
               <span className="font-semibold text-blue-900 text-sm sm:text-base">
                 100% Offline • Zero External Connections • Complete Privacy
               </span>
@@ -58,9 +58,9 @@ const AboutSection = () => {
               return (
                 <div 
                   key={index}
-                  className="bg-gray-50 rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 group"
+                  className="bg-gray-50 rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 group text-center sm:text-left"
                 >
-                  <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-md mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`mobile-feature-icon w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-md mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto sm:mx-0`}>
                     <IconComponent className={`w-6 h-6 sm:w-7 sm:h-7 ${user.color}`} />
                   </div>
                   <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
@@ -78,7 +78,7 @@ const AboutSection = () => {
         {/* Security Promise */}
         <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-center text-white">
           <div className="max-w-3xl mx-auto">
-            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-full mb-4 sm:mb-6">
+            <div className="mobile-feature-icon w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-full mb-4 sm:mb-6 mx-auto">
               <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">

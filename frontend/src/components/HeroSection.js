@@ -94,7 +94,7 @@ const HeroSection = ({ onCorporateClick }) => {
           {/* Download Stats */}
           <div className="mt-8 text-center">
             <p className="text-sm text-gray-500 mb-2">
-              Trusted by over <span className="font-bold text-blue-600">50,000+</span> professionals worldwide
+              Trusted by over <span className="font-bold text-blue-600">50,000+</span> users worldwide
             </p>
             <div className="flex justify-center items-center gap-4 text-xs text-gray-400">
               <span>★★★★★ 4.9/5 Rating</span>

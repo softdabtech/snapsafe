@@ -77,4 +77,16 @@ agenthub/agents/youtube/db
 .cache/
 
 # Mobile development
-android-sdk/ 
+android-sdk/ snapsafe-final/
+snapsafe/
+snapsaf/
+.vscode/
+.scripts/
+snapsafe-final/
+snapsafe/
+snapsaf/
+.vscode/
+.scripts/
+snapsafe-final/
+snapsafe/
+snapsaf/

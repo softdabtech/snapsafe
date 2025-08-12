@@ -18,7 +18,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2 sm:gap-3">
               <a
-                href="https://twitter.com/snapsafe"
+                href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
@@ -45,7 +45,7 @@ const Footer = () => {
                 className="flex items-center gap-2 sm:gap-3 text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
               >
                 <Mail className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-                <span className="break-all">support@snapsafe.com</span>
+                <span className="break-all">info@softdab.tech</span>
               </a>
               <a
                 href="tel:+18001234567"
@@ -98,7 +98,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500">
             <p>
-              © {currentYear} SnapSafe. All rights reserved.
+              © {currentYear} SnapSafe(c). All rights reserved.
             </p>
             <p className="flex items-center gap-2">
               <span>Built with security and privacy in mind</span>

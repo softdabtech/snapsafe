@@ -1,0 +1,12 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.(js|jsx|ts|tsx|html|css|json)$",
+        "cmd": "${workspaceFolder}/.scripts/auto_push.sh",
+        "isAsync": true,
+        "runIn": "folder"
+      }
+    ]
+  }
+}

@@ -2,7 +2,9 @@ name: Build and FTP Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]        # только пуш в main — проддеплой
+  pull_request:
+    branches: [ dev ]         # PR в dev будет запускать workflow из dev (для теста)
 
 jobs:
   build-and-deploy:

@@ -104,7 +104,7 @@ const CorporateSection = ({ onContactClick }) => {
             <div className="text-gray-400 text-sm sm:text-base">Companies Trust SnapSafe</div>
           </div>
           <div className="bg-white/5 rounded-xl p-4 sm:p-6 backdrop-blur-sm">
-            <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1 sm:mb-2">99.9%</div>
+            <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1 sm:mb-2">97.9%</div>
             <div className="text-gray-400 text-sm sm:text-base">Uptime Guarantee</div>
           </div>
           <div className="bg-white/5 rounded-xl p-4 sm:p-6 backdrop-blur-sm">

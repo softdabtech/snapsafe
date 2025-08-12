@@ -157,7 +157,7 @@ const DownloadPage = () => {
           <div className="bg-green-50 border border-green-200 rounded-xl p-6">
             <h3 className="font-semibold text-green-900 mb-3">Need Help?</h3>
             <div className="text-sm text-green-800 space-y-2">
-              <p>📧 Email: support@snapsafe.com</p>
+              <p>📧 Email: info@softdab.tech</p>
               <p>📞 Phone: +1 (800) 123-4567</p>
               <p>📖 Documentation: docs.snapsafe.com</p>
             </div>

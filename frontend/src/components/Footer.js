@@ -52,7 +52,7 @@ const Footer = () => {
                 className="flex items-center gap-2 sm:gap-3 text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
               >
                 <Phone className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-                <span>+1 (800) 123-4567</span>
+                <span>+1 (800) snap-safe</span>
               </a>
             </div>
           </div>

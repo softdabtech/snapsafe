@@ -45,7 +45,7 @@ const Footer = () => {
                 className="flex items-center gap-2 sm:gap-3 text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
               >
                 <Mail className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-                <span className="break-all">alex@softdab.tech</span>
+                <span className="break-all">info@softdab.tech</span>
               </a>
               <a
                 href="tel:+18001234567"

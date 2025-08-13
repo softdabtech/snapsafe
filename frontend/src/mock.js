@@ -3,10 +3,10 @@
 export const mockData = {
   navigation: [
     { name: 'Home', href: '/' },
-    { name: 'Features', href: '#features' },
-    { name: 'Corporate License', href: '#corporate' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Features', href: '/features' },
+    { name: 'Corporate License', href: '/corporate' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Contact', href: '/contact' }
   ],
 
   features: [

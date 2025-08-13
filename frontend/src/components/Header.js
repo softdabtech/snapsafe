@@ -2,18 +2,45 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Menu, X, Download } from 'lucide-react';
 import { mockData } from '../mock';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const scrollToSection = (href) => {
+  const handleClick = (href) => {
+    // Якорь внутри страницы — плавный скролл
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+      setIsMenuOpen(false);
+      return;
     }
+
+    // Путь — SPA навигация
+    if (href.startsWith('/')) {
+      // если уже на том же пути — ничего не делаем (или можно перезагрузить/скроллить)
+      if (location.pathname === href) {
+        // при желании: если путь указывает на секцию внутри текущей страницы,
+        // можно попытаться скроллить по id: const el = document.getElementById(href.replace(/^\//, ''));
+      } else {
+        navigate(href);
+      }
+      setIsMenuOpen(false);
+      return;
+    }
+
+    // fallback — открывать как внешнюю ссылку
+    window.location.href = href;
     setIsMenuOpen(false);
+  };
+
+  const isActive = (href) => {
+    if (!href.startsWith('/')) return false;
+    return location.pathname === href;
   };
 
   return (
@@ -30,8 +57,12 @@ const Header = () => {
             {mockData.navigation.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-sm xl:text-base"
+                onClick={() => handleClick(item.href)}
+                className={`text-sm xl:text-base font-medium transition-colors duration-200 ${
+                  isActive(item.href)
+                    ? 'text-blue-600' // active style
+                    : 'text-gray-700 hover:text-blue-600'
+                }`}
               >
                 {item.name}
               </button>
@@ -40,8 +71,8 @@ const Header = () => {
 
           {/* Desktop Download Buttons */}
           <div className="hidden lg:flex space-x-2 xl:space-x-3">
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               className="border-blue-600 text-blue-600 hover:bg-blue-50 transition-all duration-200 text-xs xl:text-sm"
               onClick={() => window.open('/download/windows', '_blank')}
@@ -49,7 +80,7 @@ const Header = () => {
               <Download className="w-3 h-3 mr-1 xl:w-4 xl:h-4 xl:mr-2" />
               Windows
             </Button>
-            <Button 
+            <Button
               size="sm"
               className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-200 shadow-lg hover:shadow-xl text-xs xl:text-sm"
               onClick={() => window.open('/download/macos', '_blank')}
@@ -78,15 +109,15 @@ const Header = () => {
             {mockData.navigation.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleClick(item.href)}
                 className="block w-full text-left px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors duration-200 rounded-lg mx-2"
               >
                 {item.name}
               </button>
             ))}
             <div className="flex flex-col space-y-3 px-3 pt-3 border-t border-gray-200 mt-3">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="border-blue-600 text-blue-600 hover:bg-blue-50 w-full"
                 onClick={() => {
                   window.open('/download/windows', '_blank');
@@ -96,7 +127,7 @@ const Header = () => {
                 <Download className="w-4 h-4 mr-2" />
                 Download for Windows
               </Button>
-              <Button 
+              <Button
                 className="bg-blue-600 hover:bg-blue-700 text-white w-full"
                 onClick={() => {
                   window.open('/download/macos', '_blank');
